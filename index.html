@@ -1,0 +1,159 @@
+<html>
+
+<head>
+	<title>Sub Urban Clothes</title>
+	
+	<link rel="icon" href="favicon.ico"/>
+	
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</head>
+
+<body id="body" style="display: inline-block; margin: 0px auto; text-align: center; background-color: #4f4f4f; color: white">
+	<br>
+
+	<img src="suburb.png"></img>
+
+	<br><br>
+
+	<a style="margin-top: 50px" href="https://www.leroleplay.fr/viewtopic.php?pid=696783#p696783" target="_blank">Redirection sur le thread LeRoleplay</a>
+	<h2 style="text-align: center; margin: 50px auto; width: 80%">Relevez ci-dessous les références des vêtements souhaités, incluez l'ID du skin OU le .dff de la tête / du corps désiré(e) puis contactez l'un des moddeurs ci-dessous:</h1>
+	<h3><img src="https://www.upload.ee/image/10855165/PI.png" style="height: 32px; width: 32px"> jikolopos </h3>
+	<h3><img src="https://www.upload.ee/image/10855165/PI.png" style="height: 32px; width: 32px"> ilovemychoppa <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/0/05/Discord.svg/1200px-Discord.svg.png" style="height: 32px; width: 32px"> Redrum#8739</h3>
+	<h3><img src="https://www.upload.ee/image/10855165/PI.png" style="height: 32px; width: 32px"> Drou <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/0/05/Discord.svg/1200px-Discord.svg.png" style="height: 32px; width: 32px"> Drew#5561</h3>
+
+	<br><br>
+
+	<h4>Exemple de commande :<br><br>
+		(1) Veste de costume réf. 1<br>
+		(2) Bas de costume réf. 8<br>
+		(3) Chaussures réf. 75<br>
+		(4) Lunettes réf. 91<br>
+
+		Total : 8000 + 5000 + 4000 + 2500$ -> 19500$
+	</h4>
+
+	<br>
+
+	<h4 style="width: 50%; text-align: center; margin: 50px auto">À noter que certains éléments sont customisables au choix (le prix pourra de facto être revu à la hausse), exemple un pull bleu peut être transformé en pull orange, vert, rouge etc.. Mais autre exemple un pull sans logo peut être revu selon les besoins du client pour en ajouter un ou plusieurs.</h4>
+</body>
+
+<script>
+	// first item, category, price
+	var items = [
+		[1, "Vestes de costume", "8000$"],
+		[7, "Pantalons de costume", "5000$"],
+		[13, "Pulls", "5000$"],
+		[16, "Chemises", "5000$"],
+		[22, "Pantalons", "5000$"],
+		[32, "T-shirts", "5000$"],
+		[44, "Vestes", "6000$"],
+		[51, "Jeans", "5000$"],
+		[56, "Shorts", "4500$"],
+		[62, "Chaussures", "4000$"],
+		[87, "Lunettes", "2500$"]
+	];
+
+	// item id, category's index from items array
+	var exceptions = [
+		[93, 2],
+		[94, 2],
+		[95, 2]
+	];
+
+	var categ, div;
+
+	for (var i = 1; i < 92; i++)
+	{		
+		for (var k = 0; k < items.length; k++)
+		{
+			if (items[k][0] == i)
+			{
+				if (i != 1)
+				{
+					div.appendChild(document.createElement("br"));
+				}
+
+				categ = k;
+
+				div = document.createElement("div");
+				div.style = "border: solid black; width: 75%; margin: auto; padding-bottom: 120px";
+				div.id = items[k][1];
+				document.getElementById("body").appendChild(div)
+
+				document.getElementById("body").appendChild(document.createElement("br"));
+				document.getElementById("body").appendChild(document.createElement("br"));
+
+				var a = document.createElement("h1");
+				a.innerHTML = items[k][1];
+				a.style = "color: white"
+				div.appendChild(a);
+
+				div.appendChild(document.createElement("br"));
+
+				document.getElementById("body").appendChild(document.createElement("br"));
+				document.getElementById("body").appendChild(document.createElement("br"));
+
+				continue;
+			}
+		}	
+
+		var imgdiv = document.createElement("div");
+		imgdiv.style = "display: inline-block;"
+		div.appendChild(imgdiv);
+
+		var img = document.createElement("img");
+		img.src = `img/${i}.png`;
+		img.style = "transform: scale(0.5); margin: auto";
+		imgdiv.appendChild(img);
+	
+		var br = document.createElement("br");
+		imgdiv.appendChild(br);
+
+		var desc = document.createElement("a");
+		desc.innerHTML = `Référence : ${i}`;
+		desc.style = "color: white"
+		imgdiv.appendChild(desc);		
+
+		var br = document.createElement("br");
+		imgdiv.appendChild(br);
+
+		var price = document.createElement("a");
+		price.innerHTML = `Prix : ${items[categ][2]}`;
+		price.style = "color: white";
+		imgdiv.appendChild(price);
+	}
+
+	for (var i = 0; i < exceptions.length; i++)
+	{
+		var imgdiv = document.createElement("div");
+		imgdiv.style = "display: inline-block;"
+		document.getElementById(items[exceptions[i][1]][1]).appendChild(imgdiv);
+
+		var img = document.createElement("img");
+		img.src = `img/${exceptions[i][0]}.png`;
+		img.style = "transform: scale(0.5); margin: auto";
+		imgdiv.appendChild(img);
+	
+		var br = document.createElement("br");
+		imgdiv.appendChild(br);
+
+		var desc = document.createElement("a");
+		desc.innerHTML = `Référence : ${exceptions[i][0]}`;
+		desc.style = "color: white"
+		imgdiv.appendChild(desc);		
+
+		var br = document.createElement("br");
+		imgdiv.appendChild(br);
+
+		var price = document.createElement("a");
+		price.innerHTML = `Prix : ${items[exceptions[i][1]][2]}`;
+		price.style = "color: white";
+		imgdiv.appendChild(price);
+	}
+</script>
+</html>
